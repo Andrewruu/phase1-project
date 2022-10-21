@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Toy Tale</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="novel-header">
+      <h1>Web Novel List</h1>
+    </div>
+
+    <div class="container">
+      <form class="add-novel-form">
+        <h3>Add Novel</h3>
+
+        <input
+          type="text"
+          name="title"
+          value=""
+          placeholder="Enter the novel's title..."
+          class="input-text"
+        />
+        <br />
+        <input
+          type="text"
+          name="image"
+          value=""
+          placeholder="Enter the novel's cover art..."
+          class="input-text"
+        />
+        <br />
+        <input
+          type="submit"
+          name="submit"
+          value="Add Novel"
+          class="submit"
+        />
+      </form>
+    </div>
+    <p style="text-align:center">
+      Add a New Novel To the List 
+    </p>
+      <div style="text-align:center">
+        <button id="new-novel-btn">Add New Novel</button>
+      </div>
+    
+
+
+    <div id="novel-collection"></div>
+    <script type="text/javascript" src="src/index.js"></script>
+  </body>
+</html>
