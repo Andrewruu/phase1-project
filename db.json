@@ -1,0 +1,39 @@
+{
+  "novels": [
+    {
+      "id": 1,
+      "name": "Coiling Dragon",
+      "image": "https://cdn.novelupdates.com/images/2016/03/s4437529.jpg",
+      "likes": 6
+    },
+    {
+      "id": 2,
+      "name": "Luoyang Brocade",
+      "image": "https://cdn.novelupdates.com/images/2019/08/61KfO1tntJL.jpg",
+      "likes": 10
+    },
+    {
+      "id": 3,
+      "name": "Library of Heaven's Path",
+      "image": "https://cdn.novelupdates.com/images/2017/03/Library-of-Heaven%E2%80%99s-Path.jpg",
+      "likes": 3
+    },
+    {
+      "id": 4,
+      "name": "I'm Really a Superstar",
+      "image": "https://cdn.novelupdates.com/images/2017/06/Im-Really-a-Superstar.jpg",
+      "likes": 5
+    },
+    {
+      "id": 5,
+      "name": "Swallowed Star",
+      "image": "https://cdn.novelupdates.com/images/2017/06/Swallowed-Star.jpg",
+      "likes": 2
+    },
+    {
+      "image": "https://cdn.novelupdates.com/images/2016/03/s4437529.jpg",
+      "likes": 0,
+      "id": 6
+    }
+  ]
+}
