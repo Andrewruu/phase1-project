@@ -24,7 +24,7 @@ function rendernovel(novel){
   div.className = "card"
 
   div.innerHTML = `
-  <h2>${novel.name}</h2>
+  <h2>${novel.title}</h2>
   <img src="${novel.image}" class="novel-avatar" />
   <p>${novel.likes} Likes</p>
   <button class="like-btn" id="${novel.id}" onClick="updateLikes(${novel.id})">Like ❤️</button>
@@ -55,10 +55,12 @@ function updateLikes(novelObj){
 function handleSubmit(e){
   e.preventDefault()
   let novelObj = {
-    name:e.target.name.value,
+    title:e.target.title.value,
     image:e.target.image.value,
+    chapters:e.target.chapters.value,
     likes: 0
   }
+  console.log(novelObj)
   rendernovel(novelObj)
   addNewNovel(novelObj)
 }
