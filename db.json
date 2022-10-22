@@ -5,35 +5,35 @@
       "title": "Coiling Dragon",
       "image": "https://cdn.novelupdates.com/images/2016/03/s4437529.jpg",
       "likes": "true",
-      "chapters": 100
+      "chapters": "1000"
     },
     {
       "id": 2,
       "title": "Luoyang Brocade",
       "image": "https://cdn.novelupdates.com/images/2019/08/61KfO1tntJL.jpg",
       "likes": "true",
-      "chapters": 15
+      "chapters": "150"
     },
     {
       "id": 3,
       "title": "Library of Heaven's Path",
       "image": "https://cdn.novelupdates.com/images/2017/03/Library-of-Heaven%E2%80%99s-Path.jpg",
       "likes": "false",
-      "chapters": 542
+      "chapters": "542"
     },
     {
       "id": 4,
       "title": "I'm Really a Superstar",
       "image": "https://cdn.novelupdates.com/images/2017/06/Im-Really-a-Superstar.jpg",
       "likes": "false",
-      "chapters": 54
+      "chapters": "54"
     },
     {
       "id": 5,
       "title": "Swallowed Star",
       "image": "https://cdn.novelupdates.com/images/2017/06/Swallowed-Star.jpg",
       "likes": "false",
-      "chapters": 150
+      "chapters": "150"
     }
   ]
 }

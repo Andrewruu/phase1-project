@@ -36,10 +36,15 @@ body {
 
 .card p {
   margin: 2px;
+  font-size: 20px;
 }
 
 .card .buttonHolder button {
   margin: 1px;
+}
+
+.card h4{
+  margin: 5px;
 }
 
 .novel-avatar {
