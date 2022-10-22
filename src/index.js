@@ -23,15 +23,30 @@ function rendernovel(novel){
   const novelContainer = document.querySelector('#novel-collection')
   div.className = "card"
 
-  div.innerHTML = `
-  <h2>${novel.title}</h2>
-  <img src="${novel.image}" class="novel-avatar" />
-  <p>${novel.likes} Likes</p>
-  <button class="like-btn" id="${novel.id}" onClick="updateLikes(${novel.id})">Like ❤️</button>
-  `
-  div.querySelector('.like-btn').addEventListener('click', () => {
+  const h2 = document.createElement('h2')
+  const img = document.createElement('img')
+  const p = document.createElement('p')
+  const btn = document.createElement('button')
+  h2.textContent=`${novel.title}`
+  div.appendChild(h2)
+
+  img.setAttribute('src', `${novel.image}`)
+  img.className = "novel-avatar"
+  div.appendChild(img)
+
+  p.textContent = `${novel.likes} Likes`
+  div.appendChild(p)
+
+  btn.className = "like-btn"
+  btn.id = `${novel.id}`
+  //btn.setAttribute("onClick",`updateLikes(${novel.id})`)
+  btn.textContent = `Like ❤️`
+  div.appendChild(btn)
+
+
+  btn.addEventListener('click', () => {
     novel.likes+= 1
-    div.querySelector('p').textContent = `${novel.likes} Likes`
+    p.textContent = `${novel.likes} Likes`
     updateLikes(novel)
   })
 
