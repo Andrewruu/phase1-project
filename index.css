@@ -33,9 +33,15 @@ body {
   margin: 1rem 1rem;
   box-shadow: 3px 4px #292727
 }
+
 .card p {
   margin: 2px;
 }
+
+.card .buttonHolder button {
+  margin: 1px;
+}
+
 .novel-avatar {
   justify-self: center;
   height: 12rem;
@@ -71,6 +77,20 @@ button:hover {
   color: white;
 }
 .container h3{
+  font-size: x-large;
+}
+
+.editContainer{
+  padding: 1rem;
+  width: stretch;
+  height: auto;
+  display: none;
+  background: #e2352f;
+  opacity: .8;
+  text-align: center;
+  color: white;
+}
+.editContainer  h3{
   font-size: x-large;
 }
 

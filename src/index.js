@@ -1,8 +1,10 @@
 let addNovel = false;
+let editExisit = false;
 
 document.addEventListener("DOMContentLoaded", () => {
   const addBtn = document.querySelector("#new-novel-btn");
   const novelFormContainer = document.querySelector(".container");
+  
   addBtn.addEventListener("click", () => {
     // hide/show form
     addNovel = !addNovel;
@@ -26,8 +28,12 @@ function rendernovel(novel){
   const h2 = document.createElement('h2')
   const img = document.createElement('img')
   const p = document.createElement('p')
-  const del = document.createElement('button')
   const chap = document.createElement('p')
+  const divBtn = document.createElement('div')
+  const del = document.createElement('button')
+  const edit = document.createElement('button')
+
+  divBtn.className = "buttonHolder"
 
   h2.textContent=`${novel.title}`
   div.appendChild(h2)
@@ -52,9 +58,13 @@ function rendernovel(novel){
   }
   div.appendChild(p)
 
-  del.textContent ='Delete'
-  div.appendChild(del)
+  edit.textContent = 'Edit'
+  divBtn.appendChild(edit)
 
+  del.textContent ='Delete'
+  divBtn.appendChild(del)
+
+  div.appendChild(divBtn)
   p.addEventListener('click', () => {
     if (novel.likes == "true")
     {
@@ -71,6 +81,57 @@ function rendernovel(novel){
     updateLikes(novel)
   })
 
+  edit.addEventListener('click', () => {
+   
+    const editNovelContainer = document.querySelector(".editContainer")
+    editNovelContainer.style.display = "block";
+
+    const editNovelForm = document.querySelector(".edit-novel-form")
+    if (editExisit){
+      removeEdit(editNovelForm)
+    }
+    const br = document.createElement("br")
+    const editNovelh = document.createElement("h3")
+
+    editNovelh.textContent = "Edit Novel"
+    editNovelForm.appendChild(editNovelh)
+
+    const editTitle = document.createElement("input")
+    editTitle.type="text"
+    editTitle.name="editTitle"
+    editTitle.setAttribute("class","input-text")
+    editTitle.value =`${novel.title}`
+    editNovelForm.appendChild(editTitle)
+    editNovelForm.appendChild(br)
+
+    const editImage = document.createElement("input")
+    editImage.type="text"
+    editImage.name="editImage"
+    editImage.setAttribute("class","input-text")
+    editImage.value =`${novel.image}`
+    editNovelForm.appendChild(editImage)
+    editNovelForm.appendChild(br)
+
+    const editChapters = document.createElement("input")
+    editChapters.type="text"
+    editChapters.name="editChapters"
+    editChapters.setAttribute("class","input-text")
+    editChapters.value =`${novel.chapters}`
+    editNovelForm.appendChild(editChapters)
+    editNovelForm.appendChild(br)
+
+    const editSubmit = document.createElement("input")
+    editSubmit.type="submit"
+    editSubmit.name="editSubmit"
+    editSubmit.value = "Edit Novel"
+    editSubmit.setAttribute("class","submit")
+    editNovelForm.appendChild(editSubmit)
+
+    editExisit = true
+
+    console.log(document.getElementsByName("editTitle"))
+  })
+
   del.addEventListener('click', () => {
     console.log(novel.id)
     deleteNovel(novel.id)
@@ -78,6 +139,12 @@ function rendernovel(novel){
   })
 
   novelContainer.appendChild(div)
+}
+
+function removeEdit(editForm){
+  while(editForm.firstChild){
+    editForm.removeChild(editForm.firstChild)
+  }
 }
 
 //updates any modification to novelObj in db
