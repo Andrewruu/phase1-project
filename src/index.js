@@ -27,6 +27,8 @@ function rendernovel(novel){
   const img = document.createElement('img')
   const p = document.createElement('p')
   const btn = document.createElement('button')
+  const chap = document.createElement('p')
+
   h2.textContent=`${novel.title}`
   div.appendChild(h2)
 
@@ -34,12 +36,14 @@ function rendernovel(novel){
   img.className = "novel-avatar"
   div.appendChild(img)
 
+  chap.textContent = `Currently on ${novel.chapters} chapter`
+  div.appendChild(chap)
+
   p.textContent = `${novel.likes} Likes`
   div.appendChild(p)
 
   btn.className = "like-btn"
   btn.id = `${novel.id}`
-  //btn.setAttribute("onClick",`updateLikes(${novel.id})`)
   btn.textContent = `Like ❤️`
   div.appendChild(btn)
 
