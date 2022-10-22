@@ -79,11 +79,11 @@ button:hover {
 
 .submit {
   position: relative;
-  background-color: #e04b52;
+  background-color: #ffffff;
   border-radius: 5px;
   height: 2rem;
   width: max-content;
-  color: whitesmoke;
+  color: rgb(0, 0, 0);
   font-size: 18px;
   justify-self: center;
   font-family: monospace;

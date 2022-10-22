@@ -39,18 +39,33 @@ function rendernovel(novel){
   chap.textContent = `Currently on ${novel.chapters} chapter`
   div.appendChild(chap)
 
-  p.textContent = `${novel.likes} Likes`
+  p.style.fontSize = `20px`
+  if (novel.likes)
+  {
+    p.textContent = `Like ♥`
+    p.style.color = `red`
+  }
+  else
+  {
+    p.textContent = `Like ♡`
+    p.style.color = `black`
+  }
   div.appendChild(p)
 
-  btn.className = "like-btn"
-  btn.id = `${novel.id}`
-  btn.textContent = `Like ❤️`
-  div.appendChild(btn)
 
-
-  btn.addEventListener('click', () => {
-    novel.likes+= 1
-    p.textContent = `${novel.likes} Likes`
+  p.addEventListener('click', () => {
+    if (novel.likes)
+    {
+      p.textContent = `Like ♡`
+      p.style.color = `black`
+      novel.likes = false
+    }
+    else
+    {
+      p.textContent = `Like ♥`
+      p.style.color = `red`  
+      novel.likes = true  
+    }
     updateLikes(novel)
   })
 
@@ -77,8 +92,9 @@ function handleSubmit(e){
     title:e.target.title.value,
     image:e.target.image.value,
     chapters:e.target.chapters.value,
-    likes: 0
+    likes:e.target.Like.value
   }
+
   console.log(novelObj)
   rendernovel(novelObj)
   addNewNovel(novelObj)
