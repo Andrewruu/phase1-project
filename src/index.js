@@ -26,7 +26,7 @@ function rendernovel(novel){
   const h2 = document.createElement('h2')
   const img = document.createElement('img')
   const p = document.createElement('p')
-  const btn = document.createElement('button')
+  const del = document.createElement('button')
   const chap = document.createElement('p')
 
   h2.textContent=`${novel.title}`
@@ -40,7 +40,7 @@ function rendernovel(novel){
   div.appendChild(chap)
 
   p.style.fontSize = `20px`
-  if (novel.likes)
+  if (novel.likes == "true")
   {
     p.textContent = `Like ♥`
     p.style.color = `red`
@@ -52,23 +52,30 @@ function rendernovel(novel){
   }
   div.appendChild(p)
 
+  del.textContent ='Delete'
+  div.appendChild(del)
 
   p.addEventListener('click', () => {
-    if (novel.likes)
+    if (novel.likes == "true")
     {
       p.textContent = `Like ♡`
       p.style.color = `black`
-      novel.likes = false
+      novel.likes = 'false'
     }
     else
     {
       p.textContent = `Like ♥`
       p.style.color = `red`  
-      novel.likes = true  
+      novel.likes = 'true'  
     }
     updateLikes(novel)
   })
 
+  del.addEventListener('click', () => {
+    console.log(novel.id)
+    deleteNovel(novel.id)
+    div.remove()
+  })
 
   novelContainer.appendChild(div)
 }
@@ -110,6 +117,16 @@ function addNewNovel(novelObj){
     },
     body:JSON.stringify(novelObj)
   })
+}
+
+function deleteNovel(id){
+  fetch(`http://localhost:3000/novels/${id}`,{
+    method: 'DELETE',
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(res => res.json())
 }
 
 //grabs all novel obj in db

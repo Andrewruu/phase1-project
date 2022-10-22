@@ -27,13 +27,15 @@ body {
   text-align: center;
   border: grey solid 1px;
   padding: 1rem;
-  width: 15rem;
+  width: 17rem;
   height: 25rem;
   display: inline-grid;
-  margin: 1rem 2rem;
+  margin: 1rem 1rem;
   box-shadow: 3px 4px #292727
 }
-
+.card p {
+  margin: 2px;
+}
 .novel-avatar {
   justify-self: center;
   height: 12rem;
