@@ -206,10 +206,14 @@ function handleAddSubmit(e){
     chapters:e.target.chapters.value,
     likes:e.target.Like.value
   }
-
-  console.log(novelObj)
   addNewNovel(novelObj)
+  clearAddNovelForm(e)
+}
 
+function clearAddNovelForm(e){
+  e.target.title.value = null
+  e.target.image.value = null
+  e.target.chapters.value = null
 }
 
 //Adds the new obj to db
