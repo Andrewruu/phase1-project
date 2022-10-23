@@ -208,8 +208,8 @@ function handleAddSubmit(e){
   }
 
   console.log(novelObj)
-  rendernovel(novelObj)
   addNewNovel(novelObj)
+
 }
 
 //Adds the new obj to db
@@ -222,6 +222,8 @@ function addNewNovel(novelObj){
     },
     body:JSON.stringify(novelObj)
   })
+  .then(res => res.json())
+  .then(data => rendernovel(data))
 }
 
 function deleteNovel(id){
